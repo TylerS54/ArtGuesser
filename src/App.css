@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600&display=swap');
+
+/* Define custom properties for light mode */
+:root {
+  --background-color: #edecfa;
+  --text-color: #000;
+  --overlay-background: rgba(244, 239, 252, 0.8);
+  --card-background: #a6a3e4; /* Light mode card background */
+  --card-text-color: #000; /* Light mode card text color */
+  font-family: 'Archivo', sans-serif;
+}
+
+/* Dark mode custom properties */
+.dark-mode {
+  --background-color: #181720;
+  --text-color: #fff;
+  --overlay-background: rgba(18, 18, 18, 0.8);
+  --card-background: #494876; /* Dark mode card background */
+  --card-text-color: #ccc; /* Dark mode card text color */
+}
+
+body {
+  font-family: 'Archivo', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+
+}
+
+.gameOverOverlay {
+  background: var(--overlay-background);
+}
+
+/* Apply dark mode styles to cards */
+.card, .gameOverCard {
+  background: var(--card-background);
+  color: var(--card-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Additional styles for inputs, buttons, and other elements might also need adjustments */
+.controls input[type="text"], .controls input[type="range"], .controls button {
+  background: var(--card-background);
+  color: var(--text-color);
+  border-color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+/* Your existing styles... */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 20px;
+}
+
+.artDisplay {
+  max-width: 60%;
+  flex-grow: 1;
+}
+
+.controls {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls input[type="range"] {
+  width: 100%;
+}
+
+.controls p {
+  text-align: center;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.imageContainer {
+  max-height: 50vh; /* Adjust based on your layout and preference */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover; /* This makes the image cover the area, adjust as needed */
+}
+
+/* Animations and other styles... */
+
+.gameOverOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.gameOverCard {
+  max-width: 400px;
+  padding: 32px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.card-enter-animation {
+  animation: fadeIn 1s ease-out;
+}
+
+.homepage, .gamePage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color); /* Use CSS variable for background */
+  text-align: center;
+  
+}
+/* Custom styles for the switch */
+.MuiSwitch-track {
+  background-color: #000; /* Track color */
+}
+
+.MuiSwitch-switchBase.Mui-checked {
+  color: #fff; /* Thumb color when active */
+}
+
+.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: #000; /* Track color when active */
+}
+.dark-mode-toggle-container {
+  position: fixed; /* Fixed position to keep it in place even on scrolling */
+  bottom: 40px; /* Distance from the bottom of the viewport */
+  left: 96%; /* Center the toggle horizontally */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo', sans-serif;
+}
+.MuiTypography-root {
+  font-family: 'Archivo', sans-serif !important;
+}
